@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.*;
 import com.gym.GymApplication.entity.Gym;
 import com.gym.GymApplication.service.GymService;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/admin/gym")
-@CrossOrigin(origins = "http://localhost:5173")
 public class GymController {
 
     private final GymService gymService;
