@@ -43,13 +43,18 @@ public class WorkoutController {
         return workoutService.updateWorkout(workoutId, workout);
     }
 
-    // GET ALL WORKOUTS OF MEMBER
+    // GET  WORKOUTS OF MEMBER BY ID
     @GetMapping("/member/{memberId}")
     public List<Workout> getMemberWorkouts(
             @PathVariable Long memberId) {
 
         return workoutService.getMemberWorkouts(memberId);
     }
+
+    @GetMapping
+    public List<Workout> getAllWorkouts() {
+    return workoutService.getAllWorkouts();
+   }
 
 
 }

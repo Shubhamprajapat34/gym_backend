@@ -3,6 +3,7 @@ package com.gym.GymApplication.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.gym.GymApplication.entity.Member;
 import com.gym.GymApplication.entity.Workout;
@@ -47,9 +48,13 @@ public class WorkoutService {
         return workoutRepository.save(existingWorkout);
     }
 
-    // GET WORKOUTS OF MEMBER
+    // GET WORKOUTS OF MEMBER BY ID
      public List<Workout> getMemberWorkouts(Long memberId) {
 
         return workoutRepository.findByMemberId(memberId);
     }
+    // GET ALL MEMBERS WORK_OUT
+     public List<Workout> getAllWorkouts() {
+         return workoutRepository.findAll();
+     }
 }
