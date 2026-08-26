@@ -1,7 +1,10 @@
 package com.gym.GymApplication.service;
 
 import org.springframework.stereotype.Service;
+
+import com.gym.GymApplication.entity.Member;
 import com.gym.GymApplication.entity.Trainer;
+import com.gym.GymApplication.repository.MemberRepository;
 import com.gym.GymApplication.repository.TrainerRepository;
 
 import java.util.List;
@@ -10,10 +13,13 @@ import java.util.List;
 public class TrainerService {
 
     private final TrainerRepository trainerRepository;
+    private final MemberRepository memberRepository;
 
-    public TrainerService(TrainerRepository trainerRepository) {
+    public TrainerService(TrainerRepository trainerRepository,MemberRepository memberRepository) {
         this.trainerRepository = trainerRepository;
+        this.memberRepository = memberRepository;
     }
+
 
     // Get all trainers
     public List<Trainer> getAllTrainers() {
@@ -53,5 +59,11 @@ public class TrainerService {
         Trainer trainer = getTrainerById(id);
 
         trainerRepository.delete(trainer);
+    }
+
+    public List<Member> getAssignedMembers(Long trainerId) {
+
+        return memberRepository.findByTrainerId(trainerId);
+        
     }
 }

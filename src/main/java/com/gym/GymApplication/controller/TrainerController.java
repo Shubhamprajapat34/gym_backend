@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gym.GymApplication.entity.Member;
 import com.gym.GymApplication.entity.Trainer;
 import com.gym.GymApplication.service.TrainerService;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/api/admin/trainers")
+@RequestMapping("/api/trainers")
 public class TrainerController {
 
     private final TrainerService trainerService;
@@ -60,5 +61,13 @@ public class TrainerController {
         trainerService.deleteTrainer(id);
 
         return "Trainer deleted successfully";
+    }
+
+     // VIEW ASSIGNED MEMBERS
+    @GetMapping("/{trainerId}/members")
+    public List<Member> getAssignedMembers(
+            @PathVariable Long trainerId) {
+
+        return trainerService.getAssignedMembers(trainerId);
     }
 }

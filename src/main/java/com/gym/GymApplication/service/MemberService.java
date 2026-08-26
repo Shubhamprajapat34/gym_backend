@@ -70,4 +70,10 @@ public class MemberService {
 
         memberRepository.delete(member);
     }
+    
+    // for finding members that assign to triner id .it helps to find memeber for trainer 
+    public List<Member> getAssignedMembers(Long trainerId) {
+
+        return memberRepository.findByTrainerId(trainerId);
+    }
 }
