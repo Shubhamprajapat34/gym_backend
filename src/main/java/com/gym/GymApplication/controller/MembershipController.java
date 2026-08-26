@@ -16,7 +16,7 @@ import com.gym.GymApplication.service.MembershipService;
 
 @CrossOrigin(origins = "http://localhost:5173") 
 @RestController
-@RequestMapping("/api/admin/memberships")
+@RequestMapping("/api/memberships")
 public class MembershipController {
 
     private final MembershipService membershipService;

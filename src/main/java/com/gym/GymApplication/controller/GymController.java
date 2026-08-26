@@ -7,7 +7,7 @@ import com.gym.GymApplication.service.GymService;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/api/admin/gym")
+@RequestMapping("/api/gym")
 public class GymController {
 
     private final GymService gymService;

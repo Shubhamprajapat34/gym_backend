@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gym.GymApplication.entity.Payment;
 import com.gym.GymApplication.service.PaymentService;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/admin/payments")
-@CrossOrigin(origins = "http://localhost:5173")
 public class PaymentController {
 
     private final PaymentService paymentService;
