@@ -53,4 +53,12 @@ public class MembershipService {
         return membershipRepository.findAll();
     }
 
+    // get member by id
+   public List<Membership> getMembershipsByMember(Long memberId) {
+      if (!memberRepository.existsById(memberId)) {
+        throw new RuntimeException("Member not found with id: " + memberId);
+    }
+    return membershipRepository.findByMemberId(memberId);
+   }
+
 }

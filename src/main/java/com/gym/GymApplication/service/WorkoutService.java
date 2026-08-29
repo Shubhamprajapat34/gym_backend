@@ -3,7 +3,6 @@ package com.gym.GymApplication.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import com.gym.GymApplication.entity.Member;
 import com.gym.GymApplication.entity.Workout;

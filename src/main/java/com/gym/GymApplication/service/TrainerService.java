@@ -60,7 +60,7 @@ public class TrainerService {
 
         trainerRepository.delete(trainer);
     }
-
+    // finding of member by trainer id that assign 
     public List<Member> getAssignedMembers(Long trainerId) {
 
         return memberRepository.findByTrainerId(trainerId);
